@@ -1,28 +1,15 @@
 name: Continous integration
 
-on: [push, pull_request]
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   CI:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: postgres://jlplautz:lingara@localhost:5432/db_lucht
 
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_PASSWORD: lingara
-          POSTGRES_USER: jlplautz
-
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432    
-    
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.11.0
