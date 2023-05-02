@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <form action="{% url 'cadastro' %}" method="POST">
+        {% csrf_token%}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

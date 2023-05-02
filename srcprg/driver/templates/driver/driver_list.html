@@ -1,0 +1,34 @@
+<!-- travel_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Motorista
+    <a class="btn btn-primary" href="{% url 'driver:driver_create' %}">Adicionar</a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>CPF</th>
+        <th>CNH</th>
+        <th>Data Nasc.</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+        <!-- https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date -->
+        <tr>
+          <td>{{ object.nome }}</td>
+          <td>{{ object.email|default:'---' }}</td>
+          <td>{{ object.cpf|default:'---' }}</td>
+          <td>{{ object.cnh|default:'---' }}</td>
+          <td>{{ object.data_nasc|default:'---' }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "includes/pagination.html" %}
+{% endblock content %}
+
