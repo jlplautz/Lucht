@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('srcprg.authentication.urls')),
+    path('driver/', include('srcprg.driver.urls', namespace='driver')),
 ]

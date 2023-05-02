@@ -1,0 +1,18 @@
+<!-- travel_form.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Formulário</h1>
+  <div class="cols-6">
+    <form class="form-horizontal" action="." method="POST">
+      <div class="col-sm-6">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock content %}
+
