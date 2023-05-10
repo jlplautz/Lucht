@@ -37,6 +37,8 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    # choices_cargo = (('M', 'Motorista'), ('G', 'Gerente'))
+    # cargo = models.CharField(max_length=1, choices=choices_cargo, default='G')
     name = models.CharField('Nome', max_length=256)
     email = models.EmailField(_('email address'), unique=True)
     cpf = models.CharField(max_length=11, unique=True, null=True)

@@ -1,0 +1,34 @@
+<!-- travel_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Caminhão
+    <a class="btn btn-primary" href="{% url 'truck:truck_create' %}">Adicionar</a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano_Fab</th>
+        <th>Placa</th>
+        <th>Odometro</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+        <!-- https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date -->
+        <tr>
+          <td>{{ object.marca }}</td>
+          <td>{{ object.modelo|default:'---' }}</td>
+          <td>{{ object.ano_fab|default:'---' }}</td>
+          <td>{{ object.placa|default:'---' }}</td>
+          <td>{{ object.odometro|default:'---' }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "includes/pagination.html" %}
+{% endblock content %}
+

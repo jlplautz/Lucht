@@ -24,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
         ),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
-    list_display = ('email', 'name', 'is_staff')
+    list_display = ('email', 'name', 'cpf', 'is_staff')
     search_fields = ('email', 'name')
     ordering = ('name',)
     add_fieldsets = (
