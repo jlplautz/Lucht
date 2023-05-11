@@ -2,6 +2,7 @@ import pytest
 
 from srcprg.authentication.models import User
 from srcprg.driver.models import Driver
+from srcprg.freight.models import Freight
 
 
 @pytest.fixture
@@ -30,3 +31,24 @@ def new_driver(db):
         cep='80240270',
     )
     return driver
+
+
+@pytest.fixture
+def new_freight(db):
+    freight = Freight.objects.create(
+        contrato='GPWC-2828',
+        cod_operacao='805156844205',
+        data='10-05-2023',
+        caminhao='AXB-8606',
+        motorista='Plautz',
+        origem='Curitiba',
+        Km_origem='80678',
+        destino='São Paulo',
+        Km_destino='81079',
+        # pedagio_pgto='SP',
+        pedagio_valor='350',
+        adiantamento_valor='1306',
+        saldo_valor='400',
+        # frete_status='FS',
+    )
+    return freight

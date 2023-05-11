@@ -1,0 +1,44 @@
+<!-- travel_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Fretes
+    <a class="btn btn-primary" href="{% url 'freight:freight_create' %}">Adicionar</a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Contrato</th>
+        <th>Cod_Operação</th>
+        <th>Data</th>
+        <th>Caminhão</th>
+        <th>Motorista</th>
+        <th>Origem</th>
+        <th>Destino</th>
+        <th>Adiant_Valor</th>
+        <th>Saldo</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+        <!-- https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date -->
+        <tr>
+          <td>{{ object.contrato }}</td>
+          <td>{{ object.cod_operacao|default:'---' }}</td>
+          <td>{{ object.data|default:'---' }}</td>
+          <td>{{ object.caminhao|default:'---' }}</td>
+          <td>{{ object.motorista|default:'---' }}</td>
+          <td>{{ object.origem|default:'---' }}</td>
+          <td>{{ object.destino|default:'---' }}</td>
+          <td>{{ object.adiantamento_valor|default:'---' }}</td>
+          <td>{{ object.saldo_valor|default:'---' }}</td>
+          <td>{{ object.frete_status|default:'---' }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "includes/pagination.html" %}
+{% endblock content %}
+

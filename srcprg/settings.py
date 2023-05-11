@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'srcprg.authentication',
     'srcprg.driver',
     'srcprg.truck',
+    'srcprg.freight',
 ]
 
 MIDDLEWARE = [

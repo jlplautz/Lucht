@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('srcprg.authentication.urls')),
     path('driver/', include('srcprg.driver.urls', namespace='driver')),
     path('truck/', include('srcprg.truck.urls', namespace='truck')),
+    path('frete/', include('srcprg.freight.urls', namespace='frete')),
 ]
