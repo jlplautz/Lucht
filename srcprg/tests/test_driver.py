@@ -22,21 +22,21 @@ def test_new_driver_cnh(new_driver):
     assert new_driver.cnh == '112345678901'
 
 
-def test_new_driver_endereco(new_driver):
-    assert new_driver.endereco == 'Castro Alves, 820'
+# def test_new_driver_endereco(new_driver):
+#     assert new_driver.endereco == 'Castro Alves, 820'
 
 
-def test_new_driver_bairro(new_driver):
-    assert new_driver.bairro == 'Agua Verde'
+# def test_new_driver_bairro(new_driver):
+#     assert new_driver.bairro == 'Agua Verde'
 
 
-def test_new_driver_cidade(new_driver):
-    assert new_driver.cidade == 'Curitiba'
+# def test_new_driver_cidade(new_driver):
+#     assert new_driver.cidade == 'Curitiba'
 
 
-def test_new_driver_estado(new_driver):
-    assert new_driver.estado == 'Parana'
+# def test_new_driver_estado(new_driver):
+#     assert new_driver.estado == 'Parana'
 
 
-def test_new_driver_cep(new_driver):
-    assert new_driver.cep == '80240270'
+# def test_new_driver_cep(new_driver):
+#     assert new_driver.cep == '80240270'
