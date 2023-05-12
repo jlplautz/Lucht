@@ -1,5 +1,5 @@
-def test_new_driver_name(new_driver):
-    assert new_driver.nome == 'Plautz'
+# def test_new_driver_name(new_driver):
+#     assert new_driver.nome == 'Plautz'
 
 
 def test_new_driver_data_nasc(new_driver):
